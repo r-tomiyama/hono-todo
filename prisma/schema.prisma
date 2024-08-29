@@ -9,10 +9,21 @@ generator client {
 }
 
 model Todo {
-  id          String  @id @default(cuid())
-  title       String
-  description String?
-  isCompleted Boolean @map("is_completed")
+  id               String             @id @default(cuid())
+  title            String
+  description      String?
+  isCompleted      Boolean            @map("is_completed")
+  definitionOfDone DefinitionOfDone[]
 
   @@map("todos")
+}
+
+model DefinitionOfDone {
+  id     String @id @default(cuid())
+  todoId String @map("todo_id")
+  todo   Todo   @relation(fields: [todoId], references: [id])
+
+  text String
+
+  @@map("definition_of_dones")
 }
