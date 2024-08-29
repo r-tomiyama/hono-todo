@@ -1,0 +1,18 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["relationJoins", "typedSql"]
+}
+
+model Todo {
+  id          String  @id @default(cuid())
+  title       String
+  description String?
+  isCompleted Boolean @map("is_completed")
+
+  @@map("todos")
+}

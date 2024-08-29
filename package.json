@@ -1,11 +1,17 @@
 {
   "name": "hono-todo",
   "scripts": {
-    "dev": "tsx watch src/index.ts"
+    "dev": "tsx watch src/index.ts",
+    "preschema:gen": "prisma-case-format --file prisma/schema.prisma --config-file=prisma/.prisma-case-format ",
+    "schema:gen": "prisma format && prisma generate",
+    "migrate": "prisma migrate dev"
   },
   "dependencies": {
     "@hono/node-server": "^1.12.2",
-    "hono": "^4.5.9"
+    "@prisma/client": "^5.19.0",
+    "hono": "^4.5.9",
+    "prisma": "^5.19.0",
+    "prisma-case-format": "^2.2.1"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
