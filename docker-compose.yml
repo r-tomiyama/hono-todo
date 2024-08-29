@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:15
+    ports:
+      - 6543:5432
+    volumes:
+      - db-store:/var/lib/postgresql/hono-todo/data
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: todo
+      TZ: UTC
+volumes:
+  db-store:
