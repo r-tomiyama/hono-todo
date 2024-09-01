@@ -1,10 +1,10 @@
-import { serve } from '@hono/node-server'
-import app from './app'
+import { serve } from "@hono/node-server";
+import app from "./app";
 
-const port = 3000
-console.log(`Server is running on port ${port}`)
+const port = 3000;
+console.log(`Server is running on port ${port}`);
 
 serve({
-  fetch: app.fetch,
-  port
-})
+	fetch: app.fetch,
+	port,
+});

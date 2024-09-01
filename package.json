@@ -1,24 +1,26 @@
 {
-  "name": "hono-todo",
-  "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "preschema:gen": "prisma-case-format --file prisma/schema.prisma --config-file=prisma/.prisma-case-format",
-    "schema:gen": "prisma format && prisma generate --sql",
-    "migrate": "prisma migrate dev"
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.12.2",
-    "@hono/zod-validator": "^0.2.2",
-    "@prisma/client": "^5.19.0",
-    "hono": "^4.5.9",
-    "prisma": "^5.19.0",
-    "prisma-case-format": "^2.2.1",
-    "uuid": "^10.0.0",
-    "zod": "^3.23.8"
-  },
-  "devDependencies": {
-    "@types/node": "^20.11.17",
-    "@types/uuid": "^10.0.0",
-    "tsx": "^4.7.1"
-  }
+	"name": "hono-todo",
+	"scripts": {
+		"dev": "tsx watch src/index.ts",
+		"preschema:gen": "prisma-case-format --file prisma/schema.prisma --config-file=prisma/.prisma-case-format",
+		"schema:gen": "prisma format && prisma generate --sql",
+		"migrate": "prisma migrate dev",
+		"lint": "biome check --write ."
+	},
+	"dependencies": {
+		"@hono/node-server": "^1.12.2",
+		"@hono/zod-validator": "^0.2.2",
+		"@prisma/client": "^5.19.0",
+		"hono": "^4.5.9",
+		"prisma": "^5.19.0",
+		"prisma-case-format": "^2.2.1",
+		"uuid": "^10.0.0",
+		"zod": "^3.23.8"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@types/node": "^20.11.17",
+		"@types/uuid": "^10.0.0",
+		"tsx": "^4.7.1"
+	}
 }
