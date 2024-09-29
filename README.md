@@ -1,6 +1,7 @@
 ```
 pnpm install
-pnpm run dev
+pnpm migrate
+pnpm dev
 ```
 
 ```
